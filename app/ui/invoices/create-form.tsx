@@ -17,7 +17,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
   const [state, formAction] = useActionState(createInvoice, initialState);
 
   // Check if there are any errors in the form
-  const hasErrors = Object.keys(state.errors).length > 0;
+  const hasErrors = Object.keys(state.errors ?? {}).length > 0;
 
   return (
     <form action={formAction}>
